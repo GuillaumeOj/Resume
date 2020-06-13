@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["192.168.1.47"]
 # Application definition
 
 INSTALLED_APPS = [
+    "resume.apps.ResumeConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
