@@ -1,0 +1,18 @@
+.projects {
+  list-style-type: none;
+  line-height: 50%;
+  .nf {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .nf-fa-check_circle_o {
+    color: $green;
+  }
+  .nf-fa-play_circle_o {
+    color: $primary;
+  }
+  .nf-fa-circle_o {
+    color: $gray-300;
+  }
+}
