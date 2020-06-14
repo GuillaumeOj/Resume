@@ -1,0 +1,19 @@
+.interests-list {
+  list-style: none;
+  padding-left: 0;
+  li.run::before {
+    content: "\1F3C3";
+  }
+  li.squat_overhead::before {
+    content: "\1F3CB";
+  }
+  li.movies::before {
+    content: "\1F4FD";
+  }
+  li.books::before {
+    content: "\1F4DA";
+  }
+  li::before {
+    font-size: 1.5rem;
+  }
+}
