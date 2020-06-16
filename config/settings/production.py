@@ -2,6 +2,7 @@
 Django settings for config project in local repository.
 """
 import os
+import dj_database_url
 from .base import *
 
 # Local SECRET_KEY
@@ -12,3 +13,8 @@ DEBUG = False
 
 # Computer adress in the local network
 ALLOWED_HOSTS = ["guillaume-ojardias.herokuapp.com"]
+
+
+# Heroku database
+DATABASE_URL = os.environ["DATABASE_URL"]
+DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)

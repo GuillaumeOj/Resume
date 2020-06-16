@@ -13,3 +13,6 @@ DEBUG = True
 
 # Computer adress in the local network
 ALLOWED_HOSTS = ["192.168.1.47"]
+
+# Local database his sqlite
+DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "db.sqlite3",}}
