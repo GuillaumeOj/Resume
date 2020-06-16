@@ -20,7 +20,7 @@ if os.environ["ENVIRONNEMENT"] == "production":
     SECRET_KEY = os.environ["SECRET_KEY"]
 
     # Allow debug
-    DEBUG = False
+    DEBUG = True
 
     # Computer adress in the local network
     ALLOWED_HOSTS = ["guillaume-ojardias.herokuapp.com"]
