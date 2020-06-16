@@ -17,4 +17,5 @@ ALLOWED_HOSTS = ["guillaume-ojardias.herokuapp.com"]
 
 # Heroku database
 DATABASE_URL = os.environ["DATABASE_URL"]
+DATABASES = {}
 DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
