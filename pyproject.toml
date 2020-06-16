@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.8"
 django = "^3.0.7"
 dj-database-url = "^0.5.0"
+whitenoise = "^5.1.0"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
