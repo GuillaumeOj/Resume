@@ -12,7 +12,9 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 DEBUG = False
 
 # Computer adress in the local network
-ALLOWED_HOSTS = ["guillaume-ojardias.herokuapp.com"]
+ALLOWED_HOSTS = ["guillaume-ojardias.herokuapp.com", "guillaume.ojardias.io"]
+
+SECURE_SSL_REDIRECT = True
 
 
 # Heroku database
