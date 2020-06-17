@@ -20,5 +20,3 @@ urlpatterns = [
     path("", include("resume.urls")),
     path("admin/", admin.site.urls),
 ]
-
-handler404 = "config.views.custom_404"
