@@ -1,27 +1,5 @@
 {% extends "base.html" %}
 {% block title %}CV - Guillaume Ojardias{% endblock title %}
-{% block nav_links %}
-<ul class="navbar-nav">
-	<li class="nav-item">
-		<a class="nav-link js-scroll-trigger" href="#about">A propos</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link js-scroll-trigger" href="#education">Formation</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link js-scroll-trigger" href="#progress">Progression</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link js-scroll-trigger" href="#skills">Compétences</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link js-scroll-trigger" href="#experience">Expérience</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link js-scroll-trigger" href="#interests">Centres d'intérêts</a>
-	</li>
-</ul>
-{% endblock nav_links %}
 {% block content %}
 {% include "resume/index/_about.html" %}
 {% include "resume/index/_education.html" %}
