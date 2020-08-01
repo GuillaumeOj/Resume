@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import About, PathWay, Experience, Social
+
+admin.site.register(About)
+admin.site.register(PathWay)
+admin.site.register(Experience)
+admin.site.register(Social)
