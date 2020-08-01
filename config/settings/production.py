@@ -2,7 +2,9 @@
 Django settings for config project in local repository.
 """
 import os
+
 import dj_database_url
+
 from .base import *
 
 # Local SECRET_KEY

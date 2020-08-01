@@ -6,4 +6,3 @@ app_name = "credits"
 urlpatterns = [
     path("", views.index, name="index"),
 ]
-
