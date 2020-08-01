@@ -12,7 +12,7 @@ SECRET_KEY = "-$-%s(l4f_cqx0wx0ima9f(n058^#h@81o5je^z1y1sal^a+!="
 DEBUG = True
 
 # Computer adress in the local network
-ALLOWED_HOSTS = ["192.168.1.47"]
+ALLOWED_HOSTS = ["*"]
 
 # Local database his sqlite
 DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "db.sqlite3",}}
