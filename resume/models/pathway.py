@@ -9,4 +9,4 @@ class PathWay(models.Model):
     )
 
     def __str__(self):
-        return f"<PathWay: {self.title}>"
+        return f"{self.title}"

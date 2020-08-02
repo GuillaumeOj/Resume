@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MinLengthValidator, MaxLengthValidator, URLValidator
 
+from .about import About
+
 
 class Social(models.Model):
 
@@ -15,5 +17,9 @@ class Social(models.Model):
         max_length=100, validators=[MinLengthValidator(2), MaxLengthValidator]
     )
 
+    about = models.ForeignKey(
+        About, on_delete=models.CASCADE, related_name="related_about"
+    )
+
     def __str__(self):
-        return f"<Social link: {self.title}>"
+        return f"{self.title}"

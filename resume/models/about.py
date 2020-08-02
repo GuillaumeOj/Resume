@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 
-from .social import Social
+from .pathway import PathWay
 
 
 class About(models.Model):
@@ -24,7 +24,7 @@ class About(models.Model):
 
     description = models.TextField()
 
-    social_links = models.ManyToManyField(Social, blank=True)
+    paths = models.ManyToManyField(PathWay)
 
     def __str__(self):
-        return f"<About: {self.first_name} {self.last_name}>"
+        return f"{self.first_name} {self.last_name}"
