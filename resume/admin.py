@@ -5,20 +5,22 @@ from .models import About, PathWay, Experience, Social, Project
 
 class ExperienceInline(admin.StackedInline):
     model = Experience
+    fields = ["path", ("title", "subtitle"), "description", ("start", "end")]
     extra = 1
     classes = ["collapse"]
 
 
-class SocialInline(admin.StackedInline):
+class SocialInline(admin.TabularInline):
     model = Social
+    fields = ["url", "title", "icon"]
     extra = 1
     classes = ["collapse"]
 
 
 class AboutAdmin(admin.ModelAdmin):
     fieldsets = [
-        ("Identity", {"fields": ["first_name", "last_name"]}),
-        ("Place", {"fields": ["place", "country"]}),
+        ("Identity", {"fields": [("first_name", "last_name"), "contact"]}),
+        ("Place", {"fields": [("place", "country")]}),
         ("Biography", {"fields": ["description"]}),
     ]
 

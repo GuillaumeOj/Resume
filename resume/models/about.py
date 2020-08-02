@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MinLengthValidator, MaxLengthValidator
+from django.core.validators import MinLengthValidator, MaxLengthValidator, EmailValidator
 
 from .pathway import PathWay
 
@@ -17,6 +17,8 @@ class About(models.Model):
     place = models.CharField(
         max_length=100, validators=[MinLengthValidator(2), MaxLengthValidator]
     )
+
+    contact = models.EmailField()
 
     country = models.CharField(
         max_length=100, validators=[MinLengthValidator(2), MaxLengthValidator]
