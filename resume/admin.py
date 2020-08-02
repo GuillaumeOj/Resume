@@ -1,21 +1,18 @@
 from django.contrib import admin
 
-from .models import About, PathWay, Experience, Social
+from .models import About, PathWay, Experience, Social, Project
 
 
 class ExperienceInline(admin.StackedInline):
     model = Experience
     extra = 1
-
-
-class PathWayInline(admin.StackedInline):
-    model = PathWay
-    extra = 1
+    classes = ["collapse"]
 
 
 class SocialInline(admin.StackedInline):
     model = Social
     extra = 1
+    classes = ["collapse"]
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -54,10 +51,20 @@ class SocialAdmin(admin.ModelAdmin):
         ("Icon", {"fields": ["icon"]}),
     ]
 
-    list_display = ("title", "about")
+    list_display = ["title", "about"]
+
+
+class ProjectAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ("For", {"fields": ["about"]}),
+        ("Details", {"fields": [("number", "name", "achieved")]}),
+    ]
+
+    list_display = ["number", "name", "achieved", "about"]
 
 
 admin.site.register(About, AboutAdmin)
 admin.site.register(PathWay, PathWayAdmin)
 admin.site.register(Experience, ExperienceAdmin)
 admin.site.register(Social, SocialAdmin)
+admin.site.register(Project, ProjectAdmin)
