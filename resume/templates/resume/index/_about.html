@@ -1,22 +1,16 @@
 <!-- About-->
 <section class="resume-section" id="about">
 	<div class="resume-section-content">
-		<h1 class="mb-0">Guillaume <span class="text-primary">Ojardias</span></h1>
+		<h1 class="mb-0">{{ resume.first_name }} <span class="text-primary">{{ resume.last_name }}</span></h1>
 		<div class="subheading mb-5">
-			Paris · France · <a href="mailto:contact@ojardias.io">contact@ojardias.io</a>
+			{{ resume.place }} · {{ resume.country }} · <a
+				href="mailto:{{ resume.contact }} ">{{ resume.contact }}</a>
 		</div>
-		<p class="lead mb-5">
-			Après 10 années dans le domaine de la construction en tant que dessinateur puis
-			formateur, j'ai décidé de faire une reconversion professionnelle pour devenir
-			développeur.<br>
-			En juillet 2019, j'ai débuté une formation en ligne dispensée par <a
-				href="https://openclassrooms.com/" target="_blank" rel="noreferrer">OpenClassrooms</a> :
-			Développeur d'Application -
-			Python.<br>
-			Aujourd'hui, je suis à l'écoute de toute opportunité pour un poste de
-			développeur Python sur Paris.
+		<p class="lead mb-5 text-justify">
+			{{ resume.description|safe|linebreaks }}
 		</p>
 		<div class="social-icons">
+			{% for link in resume.social }}
 			<a class="social-icon" href="https://www.linkedin.com/in/guillaume-ojardias-91a46643/"
 				target="_blank" rel="noreferrer">
 				<i class="fab fa-linkedin-in"></i>
