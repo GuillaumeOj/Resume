@@ -1,25 +1,39 @@
-"""
-Django settings for config project in local repository.
-"""
+"""Django settings for the remote project."""
 import os
 
 import dj_database_url
+from dotenv import find_dotenv
+from dotenv import load_dotenv
 
+# Import the base settings
 from .base import *
 
-# Local SECRET_KEY
-SECRET_KEY = os.environ["SECRET_KEY"]
 
-# Allow debug
-DEBUG = False
-
-# Computer adress in the local network
-ALLOWED_HOSTS = ["guillaume-ojardias.herokuapp.com", ".ojardias.io"]
-
-SECURE_SSL_REDIRECT = True
-
+ALLOWED_HOSTS = ["guillaume.ojardias.io", "www.ojardias.io"]
 
 # Heroku database
-DATABASE_URL = os.environ["DATABASE_URL"]
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+if os.getenv("ENV_HOST") == "HEROKU":
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    DEBUG = True if os.getenv("DEBUG") == "True" else False
+    MIDDLEWARE.append("whitenoise.middleware.WhiteNoiseMiddleware",)
+
+    DATABASE_URL = os.getenv("DATABASE_URL")
+    DATABASES = {}
+    DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+else:
+    load_dotenv(find_dotenv())
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    DEBUG = True if os.getenv("DEBUG") == "True" else False
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": os.getenv("DATABASE_NAME"),
+            "USER": os.getenv("DATABASE_USER"),
+            "PASSWORD": os.getenv("DATABASE_PASSWORD"),
+            "HOST": os.getenv("DATABASE_HOST"),
+            "PORT": os.getenv("DATABASE_PORT"),
+        }
+    }
