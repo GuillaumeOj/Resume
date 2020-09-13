@@ -120,7 +120,7 @@ version = "1.1.1"
 flake8 = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "WSGI HTTP Server for UNIX"
 name = "gunicorn"
 optional = false
@@ -260,7 +260,7 @@ version = "5.2.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "df34b042aecf694f38c109c12c249e7bd055958d8f512a2c9a9250839017d36d"
+content-hash = "fb72a9dade909e7b3f4e0d8c7e6e92b0d7094b3b2d4b1ed764d9fe0fcfceaf7d"
 python-versions = "^3.8"
 
 [metadata.files]
