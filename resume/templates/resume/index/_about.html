@@ -9,7 +9,7 @@
 			{{ resume.description|safe|linebreaks }}
 		</p>
 		<div class="social-icons">
-			{% for link in resume.social %}
+			{% for link in resume.socials %}
 			<a class="social-icon" href="{{ link.url }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
 				<i class="{{ link.icon }}"></i>
 			</a>
