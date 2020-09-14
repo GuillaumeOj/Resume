@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from .base import *
 
 
-ALLOWED_HOSTS = ["guillaume.ojardias.io", "www.ojardias.io"]
+ALLOWED_HOSTS = ["ojardias.io", "guillaume.ojardias.io", "www.ojardias.io"]
 
 load_dotenv(find_dotenv())
 SECRET_KEY = os.getenv("SECRET_KEY")
