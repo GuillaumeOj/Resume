@@ -3,24 +3,17 @@
 	<div class="resume-section-content">
 		<h1 class="mb-0">{{ resume.first_name }} <span class="text-primary">{{ resume.last_name }}</span></h1>
 		<div class="subheading mb-5">
-			{{ resume.place }} · {{ resume.country }} · <a
-				href="mailto:{{ resume.contact }} ">{{ resume.contact }}</a>
+			{{ resume.place }} · {{ resume.country }} · <a href="mailto:{{ resume.contact }} ">{{ resume.contact }}</a>
 		</div>
 		<p class="lead mb-5 text-justify">
 			{{ resume.description|safe|linebreaks }}
 		</p>
 		<div class="social-icons">
-			{% for link in resume.social }}
-			<a class="social-icon" href="https://www.linkedin.com/in/guillaume-ojardias-91a46643/"
-				target="_blank" rel="noreferrer">
-				<i class="fab fa-linkedin-in"></i>
+			{% for link in resume.social %}
+			<a class="social-icon" href="{{ link.url }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
+				<i class="{{ link.icon }}"></i>
 			</a>
-			<a class="social-icon" href="https://github.com/GuillaumeOj" target="_blank" rel="noreferrer">
-				<i class="fab fa-github"></i>
-			</a>
-			<a class="social-icon" href="https://twitter.com/GuillaumeOj" target="_blank" rel="noreferrer">
-				<i class="fab fa-twitter"></i>
-			</a>
+			{% endfor %}
 		</div>
 	</div>
 </section>
