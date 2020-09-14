@@ -8,6 +8,7 @@
 		<p class="lead mb-5 text-justify">
 			{{ resume.description|safe|linebreaks }}
 		</p>
+		{% if socials %}
 		<div class="social-icons">
 			{% for link in socials %}
 			<a class="social-icon" href="{{ link.url }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
@@ -15,6 +16,7 @@
 			</a>
 			{% endfor %}
 		</div>
+		{% endif %}
 	</div>
 </section>
 <hr class="m-0" />
