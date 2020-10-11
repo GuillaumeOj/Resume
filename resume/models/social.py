@@ -1,5 +1,7 @@
+from django.core.validators import MaxLengthValidator
+from django.core.validators import MinLengthValidator
+from django.core.validators import URLValidator
 from django.db import models
-from django.core.validators import MinLengthValidator, MaxLengthValidator, URLValidator
 
 from .about import About
 

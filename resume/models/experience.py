@@ -1,8 +1,9 @@
+from django.core.validators import MaxLengthValidator
+from django.core.validators import MinLengthValidator
 from django.db import models
-from django.core.validators import MinLengthValidator, MaxLengthValidator
 
-from .pathway import PathWay
 from .about import About
+from .pathway import PathWay
 
 
 class Experience(models.Model):

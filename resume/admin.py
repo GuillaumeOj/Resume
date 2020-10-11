@@ -1,6 +1,10 @@
 from django.contrib import admin
 
-from .models import About, PathWay, Experience, Social, Project
+from .models import About
+from .models import Experience
+from .models import PathWay
+from .models import Project
+from .models import Social
 
 
 class ExperienceInline(admin.StackedInline):
