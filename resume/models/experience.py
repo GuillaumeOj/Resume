@@ -25,5 +25,8 @@ class Experience(models.Model):
     path = models.ForeignKey(PathWay, on_delete=models.CASCADE)
     about = models.ForeignKey(About, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ["-end"]
+
     def __str__(self):
         return f"{self.title}"
