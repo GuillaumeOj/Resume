@@ -4,7 +4,6 @@
 		<h2 class="mb-5">Expérience</h2>
 		{% if pro_experiences %}
 		{% for experience in pro_experiences %}
-		{% if experience.path.title == "Expérience" %}
 		<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
 			<div class="flex-grow-1">
 				<h3 class="mb-0">{{ experience.title }}</h3>
@@ -13,11 +12,10 @@
 			</div>
 			<div class="flex-shrink-0">
 				<span class="text-primary">
-					{{experience.start }} - {{ experience.end }}
+					{{ experience.start|date:"M-Y" }} / {{ experience.end|date:"M-Y" }}
 				</span>
 			</div>
 		</div>
-		{% endif %}
 		{% endfor %}
 		{% endif %}
 	</div>
