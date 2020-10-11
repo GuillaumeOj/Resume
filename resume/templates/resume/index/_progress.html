@@ -2,98 +2,35 @@
 <section class="resume-section" id="progress">
 	<div class="resume-section-content">
 		<h2 class="mb-1">Progression</h2>
+		{% if projects %}
 		<div class="progress mb-3">
-			<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
-				role="progressbar" style="width: 61.5%" aria-valuenow="61.5" aria-valuemin="0"
-				aria-valuemax="100">
-				61.5%
+			{% with progression=projects.progression|floatformat %}
+			<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
+				style="width:{{progression}}%" aria-valuenow="{{ progression }}" aria-valuemin="0" aria-valuemax="100">
+				{{ progression }}%
 			</div>
+			{% endwith %}
 		</div>
-		<p class="subheading my-0">Projets du parcours :</p>
+		<p class=" subheading my-0">Projets du parcours :</p>
 		<div class="row justify-content-center">
-			<ul class="col-md projects mb-0">
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Définir une stratégie d'apprentissage.
-					</span>
+			<ul class="list-group projects">
+				{% for project in projects.projects %}
+				<li class="list-group-item">
+					{% with properties="mr-2 nf nf-fa-" %}
+					{% if project.achieved %}
+					<i class="{{ properties }}check_circle_o"></i>
+					{% elif project.pending %}
+					<i class="{{ properties }}play_circle_o"></i>
+					{% else %}
+					<i class="{{ properties }}circle_o"></i>
+					{% endif %}
+					{% endwith %}
+					<span>{{ project.name }}</span>
 				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Intégrer la communauté OpenClassrooms.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Aider MacGyver à s'échapper.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Analyser les besoins d'un client.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Utiliser les données publiques de l'OpenFoodFacts.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Concevoir une solution technique.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-check_circle_o"></i>
-					<span class="col p-0">
-						Créer GranPy Bot, le papy-robot.
-					</span>
-				</li>
-			</ul>
-			<ul class="col-md projects">
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-play_circle_o"></i>
-					<span class="col p-0">
-						Créer une plateforme pour les amateurs de Nutella.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-circle_o"></i>
-					<span class="col p-0">
-						Documenter un système de gestion de pizzeria.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-circle_o"></i>
-					<span class="col p-0">
-						Déployer son application sur un serveur.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-circle_o"></i>
-					<span class="col p-0">
-						Améliorer un projet existant en Python.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-circle_o"></i>
-					<span class="col p-0">
-						Effectuer un stage ou construire une veille technologique.
-					</span>
-				</li>
-				<li class="row">
-					<i class="col-1 p-0 text-center nf nf-fa-circle_o"></i>
-					<span class="col p-0">
-						Projet final.
-					</span>
-				</li>
+				{% endfor %}
 			</ul>
 		</div>
+		{% endif %}
 	</div>
 </section>
 <hr class="m-0" />

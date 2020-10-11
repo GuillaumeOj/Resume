@@ -63,10 +63,10 @@ class SocialAdmin(admin.ModelAdmin):
 class ProjectAdmin(admin.ModelAdmin):
     fieldsets = [
         ("For", {"fields": ["about"]}),
-        ("Details", {"fields": [("number", "name", "achieved")]}),
+        ("Details", {"fields": [("number", "name", "pending", "achieved")]}),
     ]
 
-    list_display = ["number", "name", "achieved", "about"]
+    list_display = ["number", "name", "pending", "achieved", "about"]
 
 
 admin.site.register(About, AboutAdmin)
