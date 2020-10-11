@@ -49,14 +49,6 @@ version = "7.1.2"
 
 [[package]]
 category = "main"
-description = "Use Database URLs in your Django Application."
-name = "dj-database-url"
-optional = false
-python-versions = "*"
-version = "0.5.0"
-
-[[package]]
-category = "main"
 description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 name = "django"
 optional = false
@@ -272,7 +264,7 @@ version = "5.2.0"
 brotli = ["brotli"]
 
 [metadata]
-content-hash = "98815eaf83ac1738638311bb28802768b48e1bd6353d73700799393bc32483e7"
+content-hash = "d9f21902a6a808df2af8c4fe6a14400dd9325f7c3f2f95168c9d0b8c031cc85b"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -292,10 +284,6 @@ black = [
 click = [
     {file = "click-7.1.2-py2.py3-none-any.whl", hash = "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"},
     {file = "click-7.1.2.tar.gz", hash = "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"},
-]
-dj-database-url = [
-    {file = "dj-database-url-0.5.0.tar.gz", hash = "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163"},
-    {file = "dj_database_url-0.5.0-py2.py3-none-any.whl", hash = "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"},
 ]
 django = [
     {file = "Django-3.1.1-py3-none-any.whl", hash = "sha256:b5fbb818e751f660fa2d576d9f40c34a4c615c8b48dd383f5216e609f383371f"},

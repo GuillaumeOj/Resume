@@ -1,7 +1,6 @@
 """Django settings for the remote project."""
 import os
 
-import dj_database_url
 from dotenv import find_dotenv
 from dotenv import load_dotenv
 
