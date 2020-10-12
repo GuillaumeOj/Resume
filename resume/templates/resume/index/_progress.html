@@ -4,7 +4,7 @@
 		<h2 class="mb-1">Progression</h2>
 		{% if projects %}
 		<div class="progress mb-3">
-			{% with progression=projects.progression|floatformat %}
+			{% with progression=projects.progression|floatformat:"0" %}
 			<div id="projects-progression" class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
 				role="progressbar" aria-valuenow="{{ progression }}" aria-valuemin="0" aria-valuemax="100">
 				{{ progression }}%
