@@ -1,3 +1,4 @@
+# flake8: noqa
 from .about import About
 from .experience import Experience
 from .pathway import PathWay

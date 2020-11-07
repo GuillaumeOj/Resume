@@ -5,7 +5,7 @@ from dotenv import find_dotenv
 from dotenv import load_dotenv
 
 # Import the base settings
-from .base import *
+from .base import *  # noqa: F401, F403
 
 
 ALLOWED_HOSTS = ["ojardias.io", "guillaume.ojardias.io", "www.ojardias.io"]

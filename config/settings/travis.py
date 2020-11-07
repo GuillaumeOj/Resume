@@ -1,5 +1,5 @@
 # Import the base settings
-from .base import *
+from .base import *  # noqa: F401, F403
 
 
 ALLOWED_HOSTS = ["*"]

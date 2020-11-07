@@ -1,4 +1,3 @@
-from django.core.validators import EmailValidator
 from django.core.validators import MaxLengthValidator
 from django.core.validators import MinLengthValidator
 from django.db import models

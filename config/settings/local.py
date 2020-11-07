@@ -1,7 +1,7 @@
 """
 Django settings for config project in local repository.
 """
-from .base import *
+from .base import *  # noqa: F401, F403
 
 
 # Local SECRET_KEY
