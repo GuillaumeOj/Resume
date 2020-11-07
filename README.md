@@ -1,5 +1,6 @@
 ![Python application](https://github.com/GuillaumeOj/Resume/workflows/Python%20application/badge.svg)
 [![Mergify Status][mergify-status]][mergify]
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [mergify]: https://mergify.io
 [mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/GuillaumeOj/Resume&style=flat
