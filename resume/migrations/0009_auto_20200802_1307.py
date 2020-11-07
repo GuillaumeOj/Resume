@@ -20,7 +20,9 @@ class Migration(migrations.Migration):
             model_name="social",
             name="about",
             field=models.ForeignKey(
-                default=1, on_delete=django.db.models.deletion.CASCADE, to="resume.About"
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="resume.About",
             ),
             preserve_default=False,
         ),
