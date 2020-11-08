@@ -1,5 +1,6 @@
 ![Python application](https://github.com/GuillaumeOj/Resume/workflows/Python%20application/badge.svg)
 [![Mergify Status][mergify-status]][mergify]
+[![Coverage Status](https://coveralls.io/repos/github/GuillaumeOj/Resume/badge.svg?branch=HEAD)](https://coveralls.io/github/GuillaumeOj/Resume?branch=HEAD)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [mergify]: https://mergify.io
