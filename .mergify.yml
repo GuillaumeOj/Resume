@@ -13,7 +13,7 @@ pull_request_rules:
         force: True
   - name: Merge Dependabot's pull requests
     conditions:
-      - "author=dependabot-preview[bot]"
+      - "author=dependabot[bot]"
       - "check-success=pep8"
       - "check-success=test"
       - "check-success=coverage"
