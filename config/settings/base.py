@@ -68,11 +68,17 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("POSTGRES_DB"),
         "USER": os.getenv("POSTGRES_USER"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-        "HOST": os.getenv("POSTGRES_HOST"),
-        "PORT": os.getenv("POSTGRES_PORT"),
     }
 }
+
+if password := os.getenv("POSTGRES_PASSWORD"):
+    DATABASES["default"]["PASSWORD"] = password
+if host := os.getenv("POSTGRES_HOST"):
+    DATABASES["default"]["HOST"] = host
+if port := os.getenv("POSTGRES_PORT"):
+    DATABASES["default"]["PORT"] = port
+
+print(DATABASES)
 
 
 LANGUAGE_CODE = "fr"
