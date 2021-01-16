@@ -6,6 +6,7 @@ authors = ["GuillaumeO <7831777+GuillaumeOj@users.noreply.github.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
+python = "^3.9"
 django = "^3.0.7"
 whitenoise = "^5.1.0"
 python-dotenv = "^0.15.0"
