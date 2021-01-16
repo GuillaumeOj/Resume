@@ -1,29 +1,25 @@
-from django.core.validators import MaxLengthValidator
 from django.core.validators import MinLengthValidator
 from django.db import models
 
-from .about import About
-from .pathway import PathWay
+
+PRO = "PRO"
+EDU = "EDU"
+EXPERIENCES_TYPES = [(PRO, "Profesionnal"), (EDU, "Education")]
 
 
 class Experience(models.Model):
 
-    title = models.CharField(
-        max_length=100, validators=[MinLengthValidator(5), MaxLengthValidator]
-    )
-
-    subtitle = models.CharField(
-        max_length=100, validators=[MinLengthValidator(5), MaxLengthValidator]
-    )
+    title = models.CharField(max_length=100, validators=[MinLengthValidator(5)])
+    subtitle = models.CharField(max_length=100, validators=[MinLengthValidator(5)])
 
     description = models.TextField(blank=True)
 
     start = models.DateField()
-
     end = models.DateField()
 
-    path = models.ForeignKey(PathWay, on_delete=models.CASCADE)
-    about = models.ForeignKey(About, on_delete=models.CASCADE)
+    experience_type = models.CharField(
+        max_length=3, choices=EXPERIENCES_TYPES, default=PRO
+    )
 
     class Meta:
         ordering = ["-end"]

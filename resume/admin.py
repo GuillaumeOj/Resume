@@ -1,24 +1,9 @@
 from django.contrib import admin
 
-from .models import About
-from .models import Experience
-from .models import PathWay
-from .models import Project
-from .models import Social
-
-
-class ExperienceInline(admin.StackedInline):
-    model = Experience
-    fields = ["path", ("title", "subtitle"), "description", ("start", "end")]
-    extra = 1
-    classes = ["collapse"]
-
-
-class SocialInline(admin.TabularInline):
-    model = Social
-    fields = ["url", "title", "icon"]
-    extra = 1
-    classes = ["collapse"]
+from resume.models import about
+from resume.models import experience
+from resume.models import project
+from resume.models import social
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -30,47 +15,49 @@ class AboutAdmin(admin.ModelAdmin):
 
     list_display = ("first_name", "last_name")
 
-    inlines = [SocialInline, ExperienceInline]
 
-
-class PathWayAdmin(admin.ModelAdmin):
-    fields = ["title"]
-
-    list_display = ["title"]
+class ExperienceInline(admin.StackedInline):
+    model = experience.Experience
+    fields = ["experience_type", ("title", "subtitle"), "description", ("start", "end")]
+    extra = 1
+    classes = ["collapse"]
 
 
 class ExperienceAdmin(admin.ModelAdmin):
     fieldsets = [
-        ("Type", {"fields": ["path"]}),
-        ("For", {"fields": ["about"]}),
+        ("Type", {"fields": ["experience_type"]}),
         ("Description", {"fields": ["title", "subtitle", "description"]}),
         ("Dates", {"fields": ["start", "end"]}),
     ]
 
-    list_display = ["title", "path", "about"]
+    list_display = ["title", "experience_type"]
+
+
+class SocialInline(admin.TabularInline):
+    model = social.Social
+    fields = ["url", "title", "icon"]
+    extra = 1
+    classes = ["collapse"]
 
 
 class SocialAdmin(admin.ModelAdmin):
     fieldsets = [
-        ("For", {"fields": ["about"]}),
         ("Link", {"fields": ["url", "title"]}),
         ("Icon", {"fields": ["icon"]}),
     ]
 
-    list_display = ["title", "about"]
+    list_display = ["title"]
 
 
 class ProjectAdmin(admin.ModelAdmin):
     fieldsets = [
-        ("For", {"fields": ["about"]}),
         ("Details", {"fields": [("number", "name", "pending", "achieved")]}),
     ]
 
-    list_display = ["number", "name", "pending", "achieved", "about"]
+    list_display = ["number", "name", "pending", "achieved"]
 
 
-admin.site.register(About, AboutAdmin)
-admin.site.register(PathWay, PathWayAdmin)
-admin.site.register(Experience, ExperienceAdmin)
-admin.site.register(Social, SocialAdmin)
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(about.About, AboutAdmin)
+admin.site.register(experience.Experience, ExperienceAdmin)
+admin.site.register(social.Social, SocialAdmin)
+admin.site.register(project.Project, ProjectAdmin)

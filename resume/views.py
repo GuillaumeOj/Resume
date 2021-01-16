@@ -1,27 +1,25 @@
 from django.shortcuts import render
 
-from resume.models import About
-from resume.models import Experience
-from resume.models import PathWay
-from resume.models import Project
-from resume.models import Social
+from resume.models import about
+from resume.models import experience
+from resume.models import project
+from resume.models import social
 
 
 def index(request):
-    resume = About.objects.all().first()
+    resume = about.About.objects.all().first()
 
-    socials = Social.objects.filter(about=resume)
+    socials = social.Social.objects.all()
 
-    pro_pathway = PathWay.objects.filter(title="Expérience").first()
-    pro_experiences = Experience.objects.filter(about=resume, path=pro_pathway)
-
-    education_pathway = PathWay.objects.filter(title="Formation").first()
-    education_experiences = Experience.objects.filter(
-        about=resume, path=education_pathway
+    pro_experiences = experience.Experience.objects.filter(
+        experience_type=experience.PRO
+    )
+    education_experiences = experience.Experience.objects.filter(
+        experience_type=experience.EDU
     )
 
-    projects = Project.objects.filter(about=resume)
-    progression = Project.objects.progression(resume)
+    projects = project.Project.objects.all()
+    progression = project.Project.objects.progression()
 
     context = {
         "resume": resume,

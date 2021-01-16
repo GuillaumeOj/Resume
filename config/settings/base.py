@@ -78,8 +78,6 @@ if host := os.getenv("POSTGRES_HOST"):
 if port := os.getenv("POSTGRES_PORT"):
     DATABASES["default"]["PORT"] = port
 
-print(DATABASES)
-
 
 LANGUAGE_CODE = "fr"
 
