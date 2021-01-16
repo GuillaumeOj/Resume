@@ -2,26 +2,22 @@ pull_request_rules:
   - name: Merge Guillaume's pull requests
     conditions:
       - "author=GuillaumeOj"
-      - "label!=work-in-progress"
-      - "label!=manual merge"
       - "check-success=pep8"
       - "check-success=test"
       - "check-success=coverage"
     actions:
       merge:
         strict: "smart"
-        method: "rebase"
+        method: squash
       delete_head_branch:
         force: True
-  - name: automatic merge from dependabot
+  - name: Merge Dependabot's pull requests
     conditions:
       - "author=dependabot-preview[bot]"
-      - label!=work-in-progress
-      - label!=manual merge
       - "check-success=pep8"
       - "check-success=test"
       - "check-success=coverage"
     actions:
       merge:
         strict: "smart"
-        method: rebase
+        method: squash 
