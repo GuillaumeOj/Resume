@@ -1,23 +1,23 @@
 pull_request_rules:
   - name: Merge Guillaume's pull requests
     conditions:
-      - "author=GuillaumeOj"
-      - "check-success=pep8"
-      - "check-success=test"
-      - "check-success=coverage"
+      - author=GuillaumeOj
+      - check-success=pep8
+      - check-success=test
+      - check-success=coverage
     actions:
       merge:
-        strict: "smart"
-        method: squash
+        strict: smart
+        method: rebase 
       delete_head_branch:
         force: True
   - name: Merge Dependabot's pull requests
     conditions:
-      - "author=dependabot[bot]"
-      - "check-success=pep8"
-      - "check-success=test"
-      - "check-success=coverage"
+      - author=dependabot[bot]
+      - check-success=pep8
+      - check-success=test
+      - check-success=coverage
     actions:
       merge:
-        strict: "smart"
-        method: squash 
+        strict: smart
+        method: rebase 
