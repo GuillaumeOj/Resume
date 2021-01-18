@@ -13,3 +13,7 @@ node_modules/
 # Environnement stuffs
 .tox
 cov_html/
+
+# Yarn
+.yarn
+.pnp.*
