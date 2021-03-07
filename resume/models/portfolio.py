@@ -1,5 +1,6 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
+import django.utils
 
 
 class PortfolioCategory(models.Model):
@@ -16,7 +17,12 @@ class Portfolio(models.Model):
     description = models.TextField()
     link = models.URLField()
 
+    publishing_date = models.DateField(default=django.utils.timezone.now)
+
     portfolio_categories = models.ManyToManyField(PortfolioCategory)
+
+    class Meta:
+        ordering = ["-publishing_date"]
 
     def __str__(self):
         return f"{self.title}"
