@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from resume.models import about
 from resume.models import experience
+from resume.models import portfolio
 from resume.models import project
 from resume.models import social
 
@@ -61,3 +62,5 @@ admin.site.register(about.About, AboutAdmin)
 admin.site.register(experience.Experience, ExperienceAdmin)
 admin.site.register(social.Social, SocialAdmin)
 admin.site.register(project.Project, ProjectAdmin)
+admin.site.register(portfolio.PortfolioCategory)
+admin.site.register(portfolio.Portfolio)

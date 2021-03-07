@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from resume.models import about
 from resume.models import experience
+from resume.models import portfolio
 from resume.models import project
 from resume.models import social
 
@@ -21,12 +22,15 @@ def index(request):
     projects = project.Project.objects.all()
     progression = project.Project.objects.progression()
 
+    portfolio_elements = portfolio.Portfolio.objects.all()
+
     context = {
         "resume": resume,
         "socials": socials,
         "pro_experiences": pro_experiences,
         "education_experiences": education_experiences,
         "projects": {"projects": projects, "progression": progression},
+        "portfolio": portfolio_elements,
     }
 
     return render(request, "resume/index.html", context=context)

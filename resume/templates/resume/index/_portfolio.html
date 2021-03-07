@@ -1,0 +1,28 @@
+<!-- Portfolio -->
+<section class="resume-section" id="portfolio">
+	<div class="resume-section-content">
+		<h2 class="mb-5">Portfolio</h2>
+		{% if portfolio %}
+		<div class="row row-cols-md-3">
+			{% for item in portfolio %}
+			<div class="col mb-4">
+				<div class="card">
+					<div class="card-header">
+						<h3>{{ item.title }}</h3>
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">{{ item.subtitle }}</h4>
+						<p class="card-text">{{ item.description|safe|linebreaks }}</p>
+						<a href="{{ item.link }}" class="btn btn-primary" target="_blank" rel="noreferrer">
+							More details
+						</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+		<h3>No elements to show yet</h3>
+		{% endif %}
+</section>
+<hr class="m-0" />
