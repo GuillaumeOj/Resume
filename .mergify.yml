@@ -5,18 +5,21 @@ pull_request_rules:
       - check-success=pep8
       - check-success=test
       - check-success=coverage
+      - check-success~=^security/snyk
     actions:
       merge:
         strict: smart
         method: rebase 
       delete_head_branch:
         force: True
-  - name: Merge Dependabot's pull requests
+  - name: Merge Snyk's pull requests
     conditions:
-      - author=dependabot[bot]
+      - title~=^\[Snyk\]
+      - head~=^snyk-fix
       - check-success=pep8
       - check-success=test
       - check-success=coverage
+      - check-success~=^security/snyk
     actions:
       merge:
         strict: smart
