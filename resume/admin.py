@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 from resume.models import about
-from resume.models import experience
 from resume.models import portfolio
 from resume.models import project
 from resume.models import social
@@ -15,23 +14,6 @@ class AboutAdmin(admin.ModelAdmin):
     ]
 
     list_display = ("first_name", "last_name")
-
-
-class ExperienceInline(admin.StackedInline):
-    model = experience.Experience
-    fields = ["experience_type", ("title", "subtitle"), "description", ("start", "end")]
-    extra = 1
-    classes = ["collapse"]
-
-
-class ExperienceAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ("Type", {"fields": ["experience_type"]}),
-        ("Description", {"fields": ["title", "subtitle", "description"]}),
-        ("Dates", {"fields": ["start", "end"]}),
-    ]
-
-    list_display = ["title", "experience_type"]
 
 
 class SocialInline(admin.TabularInline):
@@ -59,7 +41,6 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 admin.site.register(about.About, AboutAdmin)
-admin.site.register(experience.Experience, ExperienceAdmin)
 admin.site.register(social.Social, SocialAdmin)
 admin.site.register(project.Project, ProjectAdmin)
 admin.site.register(portfolio.PortfolioCategory)
