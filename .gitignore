@@ -6,6 +6,7 @@ db.sqlite3-journal
 
 # Python stuffs
 __pycache__/
+*.egg-info
 
 # Template stuffs
 node_modules/
