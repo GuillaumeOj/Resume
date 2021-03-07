@@ -1,7 +1,7 @@
-<!-- Path progression -->
+<!-- Training progression -->
 <section class="resume-section" id="progress">
 	<div class="resume-section-content">
-		<h2 class="mb-1">Progression</h2>
+		<h2 class="mb-1">Training progress</h2>
 		{% if projects %}
 		<div class="progress mb-3">
 			{% with progression=projects.progression|floatformat:"0" %}
@@ -16,7 +16,7 @@
 			const progression = "width: " + progressBar.innerText + ";";
 			progressBar.setAttribute("style", progression);
 		</script>
-		<p class=" subheading my-0">Projets du parcours :</p>
+		<h3 class="subheading my-0">Projects for the training:</h3>
 		<div class="row justify-content-center">
 			<ul class="list-group projects">
 				{% for project in projects.projects %}
@@ -35,6 +35,8 @@
 				{% endfor %}
 			</ul>
 		</div>
+		{% else %}
+		<h3 class="subheading my-0">No current training</h3>
 		{% endif %}
 	</div>
 </section>
